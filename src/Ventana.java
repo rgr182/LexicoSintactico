@@ -93,7 +93,7 @@ public class Ventana extends javax.swing.JFrame {
         {
             
            columna=buscarC(vector[i],i);
-           System.out.print("renglon "+renglon+"columna "+columna);
+           System.out.println("renglon "+renglon+"columna "+columna);
            renglon=matriz[renglon][columna];
            lexema="";
            if(renglon==0)
@@ -137,7 +137,7 @@ public class Ventana extends javax.swing.JFrame {
         }        
         if(Character.isLetter(car))
         {
-            if((car=='E'))
+            if((car=='E' && (String.valueOf(vector[index+1]).equals(" "))) && (String.valueOf(vector[index-1]).equals(" ")) && i!=0)
             {
                 return 5;
             }
@@ -1065,10 +1065,8 @@ private int matriz_p[][] =
                 }
             }   
            if(tope=="$")
-            {
-                System.out.println("ERROR SINTACTICO");
-                return 1; 
-                
+            {                System.out.println("ERROR SINTACTICO");
+                return 1;                 
             }
             
         }
