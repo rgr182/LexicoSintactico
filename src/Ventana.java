@@ -91,25 +91,28 @@ public class Ventana extends javax.swing.JFrame {
         
         for(i=0;i<vector.length;i++)
         {
-           columna=buscarC(vector[i]);
+            
+           columna=buscarC(vector[i],i);
+           System.out.print("renglon "+renglon+"columna "+columna);
            renglon=matriz[renglon][columna];
            lexema="";
            if(renglon==0)
            {
-               inicio++;
+               inicio=i;
            }
            if(renglon>=100&&renglon<=199) 
            {
                finAceptado(renglon);
                
-               if(sintactico(renglon)==1)
+             /*  if(sintactico(renglon)==1)
                {
                    return;
                }
-               
+               */
                renglon=0;
                inicio=i+1;
               sinta.append(lexema+"   : "   +"Estado ..."+gramema+"\n"); 
+              System.out.println(lexema+"   : "   +"Estado ..."+gramema+"\n");
            }
            if(renglon>=500&&renglon<=507) 
             {
@@ -119,15 +122,19 @@ public class Ventana extends javax.swing.JFrame {
                 return;
             }
            
+           
 
         }
         
     }
     
     
-    static int buscarC(char car)
+     int buscarC(char car,int index)
     {
        
+        if ((String.valueOf(vector[index])).equals(" ")) {
+            return 29;
+        }        
         if(Character.isLetter(car))
         {
             if((car=='E'))
@@ -144,12 +151,12 @@ public class Ventana extends javax.swing.JFrame {
             }
             else
             {
-                return 0;
+                return 1;
             }
         }
         if(Character.isDigit(car))
         {
-            return 2;
+            return 5;
         }
         switch(car)
         {
@@ -174,7 +181,7 @@ public class Ventana extends javax.swing.JFrame {
             case '[':return 20;
             case ']':return 21;
             case '#':return 26;
-            
+             
              
         }
         
@@ -199,78 +206,116 @@ public class Ventana extends javax.swing.JFrame {
                     if(lexema.equals("CLASS"))
                     {
                         gramema=200;
+                        renglon = 0;
+                        columna = 0;
                     }
                     if(lexema.equals("BEGIN"))
                     {
                         gramema=201;
+                        renglon = 0;
+                        columna = 0;
                     }
                      if(lexema.equals("ENDCLASS"))
                     {
                         gramema=202;
+                        renglon = 0;
+                        columna = 0;
                     }
                       if(lexema.equals("INTEGER"))
                     {
                         gramema=203;
+                        renglon = 0;
+                        columna = 0;
                     }
                        if(lexema.equals("FLOAT"))
                     {
                         gramema=204;
+                        renglon = 0;
+                        columna = 0;
                     }
                         if(lexema.equals("CHAR"))
                     {
                         gramema=205;
+                        renglon = 0;
+                        columna = 0;
                     }
                          if(lexema.equals("STRING"))
                     {
                         gramema=206;
+                        renglon = 0;
+                        columna = 0;
                     }
                           if(lexema.equals("BOOLEAN"))
                     {
                         gramema=207;
+                        renglon = 0;
+                        columna = 0;
                     }
                            if(lexema.equals("READ"))
                     {
                         gramema=208;
+                        renglon = 0;
+                        columna = 0;
                     }
                             if(lexema.equals("PRINT"))
                     {
                         gramema=209;
+                        renglon = 0;
+                        columna = 0;
                     }
                              if(lexema.equals("IF"))
                     {
                         gramema=210;
+                        renglon = 0;
+                        columna = 0;
                     }
                               if(lexema.equals("ENDIF"))
                     {
                         gramema=211;
+                        renglon = 0;
+                        columna = 0;
                     }
                                if(lexema.equals("ELSE"))
                     {
                         gramema=212;
+                        renglon = 0;
+                        columna = 0;
                     }
                                 if(lexema.equals("WHILE"))
                     {
                         gramema=213;
+                        renglon = 0;
+                        columna = 0;
                     }
                                  if(lexema.equals("ENDWHILE"))
                     {
                         gramema=214;
+                        renglon = 0;
+                        columna = 0;
                     }
                                   if(lexema.equals("FOR"))
                     {
                         gramema=215;
+                        renglon = 0;
+                        columna = 0;
                     }
                                    if(lexema.equals("ENDFOR"))
                     {
                         gramema=216;
+                        renglon = 0;
+                        columna = 0;
                     }
                                     if(lexema.equals("TRUE"))
                     {
                         gramema=217;
+                        renglon = 0;
+                        columna = 0;
                     }
                                      if(lexema.equals("FALSE"))
                     {
                         gramema=218;
+                        renglon = 0;
+                        columna = 0;
                     }
                     ban=true;
                 }
