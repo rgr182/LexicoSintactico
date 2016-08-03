@@ -140,7 +140,7 @@ public class Ventana extends javax.swing.JFrame {
             }
             else if(Character.isUpperCase(car))
             {
-                return 3;
+                return 0;
             }
             else
             {
@@ -149,7 +149,7 @@ public class Ventana extends javax.swing.JFrame {
         }
         if(Character.isDigit(car))
         {
-            return 5;
+            return 2;
         }
         switch(car)
         {
@@ -170,10 +170,15 @@ public class Ventana extends javax.swing.JFrame {
             case '(':return 22;
             case ')':return 23;
             case ',':return 24;
+            case '%':return 9;
+            case '[':return 20;
+            case ']':return 21;
+            case '#':return 26;
+            
              
         }
         
-        return 26;
+        return 29;
     }
     
    
